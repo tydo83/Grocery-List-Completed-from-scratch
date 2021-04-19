@@ -25,4 +25,4 @@ function GroceryItem() {
     )
 }
 
-export default groceryItem;
+export default GroceryItem;
