@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
-import { GroceryItemContext } from './context'
+import { GroceryItemContext } from './context/context'
 
 function GroceryItem() {
     const {
-        groceryItem: {id, grocery, isComplete },
+        groceryItem: {id, grocery, isCompleted },
         deleteGrocery,
         doneGrocery, 
     } = useContext(GroceryItemContext)
@@ -18,7 +18,7 @@ function GroceryItem() {
 
     return (
         <div>
-            {isComplete ? <span style={{textDecoration:"line-through"}}>{grocery}</span> : grocery}
+            {isCompleted ? <span style={{textDecoration:"line-through"}}>{grocery}</span> : grocery}
             <button onClick={() => handleDoneOnClick(id)}>Done</button>
             <button onClick={() => handleDeleteOnClick(id)}>Delete</button>
         </div>

@@ -51,15 +51,22 @@ function App() {
     setGroceryArray(newDoneGroceryArray)
   }
 
+  function showGrocery() {
+    return groceryArray.map((item) => {
+      return (
+        <GroceryItemContext.Provider value={{groceryItem: item, deleteGrocery, doneGrocery}}>
+          <GroceryItem />
+        </GroceryItemContext.Provider>
+      )
+    })
+  }
 
   return (
-    <div className="App">
+    <div className="App" style={{textAlign:"center"}}>
       <GroceryInputContext.Provider value={{addGrocery}}>
         <GroceryInput />
       </GroceryInputContext.Provider>
-      <GroceryItemContext.Provider value={{groceryItem: item, deleteGrocery, doneGrocery}}>
-        <GroceryItem />
-      </GroceryItemContext.Provider>
+      {showGrocery()}
     </div>
   );
 }
