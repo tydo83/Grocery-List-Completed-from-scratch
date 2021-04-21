@@ -22,7 +22,7 @@ function App() {
 
   function addGrocery(grocery) {
     let newAddedGroceryArray = [
-      ...grocery,
+      ...groceryArray,
       {
         id: uuidv4(),
         grocery: grocery,

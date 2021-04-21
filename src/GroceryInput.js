@@ -16,8 +16,9 @@ const GroceryInput = () => {
             <input
                 type="text"
                 value={grocery}
-                onChange={(e)=>setGrocery(e.target.value)}
+                onChange={(e) => setGrocery(e.target.value)}
             />
+            <button type="submit">Submit</button>
         </form>
     )
 }
